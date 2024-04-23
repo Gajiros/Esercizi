@@ -1,4 +1,4 @@
-'''
+
 #4-1, 4-11
 fav_pizza: list = ['Margherita', 'Diavola', 'Ortolana']
 for output in fav_pizza:
@@ -200,7 +200,53 @@ while (x < 6):
         print('The person is an adult.')
     elif (age >= 65):
         print('The person is an elder.')
-'''
+
 #5-7
 favorite_fruits: list = ['banana', 'apple', 'pear']
-if (favorite_fruits[0] == ):
+for a in favorite_fruits:
+    if (a == 'banana'):
+        print('You really like bananas.')
+    elif (a == 'apple'):
+        print('You really like apples')
+    elif (a == 'pear'):
+        print('You really like pears')
+
+#5-8, 5-9
+usernames: list = ['admin', 'jaden', 'emma', 'noah', 'sophia']
+for username in usernames:
+    if (username == 'admin'):
+        print("Hello admin, would you like to see a status report?")
+    else:
+        print(f"Hello {username.capitalize()}, thank you for logging in again.")
+
+usernames = []
+if (usernames):
+    if (username == 'admin'):
+        print("Hello admin, would you like to see a status report?")
+    else:
+        print(f"Hello {username.capitalize()}, thank you for logging in again.")
+else:
+    print('We need to find some users!')
+
+#5-10
+current_users: list = ['Gabriel', 'Alessio', 'Francesco', 'Light', 'L']
+current_users_lower: list = [read.lower() for read in current_users]
+new_users: list = ['Gabriel', 'Alessio', 'Simone', 'Federico', 'Edoardo']
+for a in new_users:
+    for b in current_users:
+        if (a == b):
+            print('The username is taken. Choose another one.')
+        else:
+            None   
+
+#5-11
+numbers: list = range(1, 10)
+for a in numbers:
+    if (a == 1):
+        print('1st')
+    elif (a == 2):
+        print('2nd')
+    elif (a == 3):
+        print('3rd')
+    else:
+        print(f'{a}th')
