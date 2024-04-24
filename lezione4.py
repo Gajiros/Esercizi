@@ -102,16 +102,21 @@ show_messages(text2)
 #Bubble Sort
 def BubbleSort(list: list) -> list:
     for i in range(len(list)):
+        swap_flag: bool = False
         for j in range(len(list) - i - 1):
             if (list[j] > list[j + 1]):
+                swap_flag = True
                 temp: int = list[j]
                 list[j] = list[j + 1]
                 list[j + 1] = temp
             continue
+        if (swap_flag == False):
+            return list
         continue
     return list
 start: int = time.time()
-list1: list = [n for n in range(10000, 0, -1)]
+list1: list = [n for n in range(0, 10001
+                                )]
 list_sorted = BubbleSort(list1)
 print(list_sorted)
 print(time.time() - start)
