@@ -98,6 +98,26 @@ text1: list = ['1', '2', '3']
 text2: list = text1
 show_messages(text1)
 show_messages(text2)
+
+#8-12
+def list_items(*items: str):
+    print('The items in the list are: ', end = '')
+    for read in items:
+        print(read, ', ', end = '')
+    print('')
+list_items('hamburger', 'tomato', 'salad')
+list_items('hamburger', 'tomato')
+list_items('hamburger', 'tomato', 'salad', 'ketchup')
+
+#8-13
+def build_profile(first_name: str, last_name: str, age: int, hair_color: str, weight: int) -> str:
+    profile: str = f"{first_name} {last_name}, age {age}, hair {hair_color}, weight {weight}"
+    return profile
+profilo1: str = build_profile("Gabriel", "Jimenez", 19, "black", 85)
+print(profilo1)
+'''
+#8-14
+
 '''
 #Bubble Sort
 def BubbleSort(list: list) -> list:
@@ -120,3 +140,4 @@ list1: list = [n for n in range(0, 10001
 list_sorted = BubbleSort(list1)
 print(list_sorted)
 print(time.time() - start)
+'''
