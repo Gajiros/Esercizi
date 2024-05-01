@@ -1,5 +1,5 @@
 import time
-'''
+
 #8-1
 def display_message(par: str):
     print(par)
@@ -115,10 +115,15 @@ def build_profile(first_name: str, last_name: str, age: int, hair_color: str, we
     return profile
 profilo1: str = build_profile("Gabriel", "Jimenez", 19, "black", 85)
 print(profilo1)
-'''
-#8-14
 
-'''
+#8-14
+def make_car(manufacturer: str, model: str, **kwargs: dict) -> dict:
+    car_info: dict = {'manufacturer': manufacturer, 'model': model}
+    car_info.update(kwargs)
+    return car_info
+car: dict = make_car('subaru', 'outback', color='blue', tow_package=True)
+print(car)
+
 #Bubble Sort
 def BubbleSort(list: list) -> list:
     for i in range(len(list)):
@@ -140,4 +145,3 @@ list1: list = [n for n in range(0, 10001
 list_sorted = BubbleSort(list1)
 print(list_sorted)
 print(time.time() - start)
-'''
