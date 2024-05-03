@@ -1,5 +1,5 @@
 import time
-
+'''
 #8-1
 def display_message(par: str):
     print(par)
@@ -145,3 +145,77 @@ list1: list = [n for n in range(0, 10001
 list_sorted = BubbleSort(list1)
 print(list_sorted)
 print(time.time() - start)
+'''
+def blackjack_hand_total(cards: list[int]) -> int:
+    sum: int = 0
+    for read in cards:
+        if (sum > 10) and (read == 11):
+            sum = sum + 1
+        else:
+            sum = sum + read
+    return sum
+
+def construct_rectangle(area: float) -> list[float]:
+    #trovata soluzione da internet e capita :D
+    L: int = 1
+    W: int = area
+    for i in range(2, int(area**0.5) + 1):
+        if ((area % i) == 0):
+            if (((area // i) - i) < (W - L)):
+                L = i
+                W = area // i
+    return [W, L] if W > L else [L, W]
+
+def word_frequency(text: str, stopwords: list[str]) -> dict[str, int]:
+    text = text.lower()
+    text = text.replace('.', '')
+    text = text.replace(',', '')
+    text = text.replace('!', '')
+    text = text.replace('?', '')
+    words: list = text.split()
+    filtered_words: list = [word for word in words if word not in stopwords]
+    word_freq: dict = {}
+    for word in filtered_words:
+        if (word in word_freq):
+            word_freq[word] += 1
+        else:
+            word_freq[word] = 1
+    return word_freq
+
+def find_disappeared_numbers(nums: list[int]) -> list[int]:
+    numbers_to_add: list = [i for i in range(1, len(nums) + 1)]
+    for num in nums:
+        if num in numbers_to_add:
+            numbers_to_add.remove(num)
+    return numbers_to_add
+
+def is_subsequence(s: str, t: str) -> bool:
+    pointer_s: int = 0
+    pointer_t: int = 0
+    while ((pointer_s < len(s)) and (pointer_t < len(t))):
+        if (s[pointer_s] == t[pointer_t]):
+            pointer_s += 1
+        pointer_t += 1
+    return (pointer_s == len(s))
+
+def even_odd_pattern(nums: list[int]) -> list[int]:
+    even_numbers: list = [num for num in nums if (num % 2 == 0)]
+    odd_numbers: list = [num for num in nums if (num % 2 != 0)]
+    return even_numbers + odd_numbers
+
+def prime_factors(n: int) -> list[int]:
+    factors: list = []
+    divisor: int = 2
+    while (n > 1):
+        while ((n % divisor) == 0):
+            factors.append(divisor)
+            n //= divisor
+        divisor += 1
+    return factors
+
+def third_max(nums: list[int]) -> int:
+    unique_nums: set = sorted(set(nums), reverse = True)
+    if (len(unique_nums) < 3):
+        return unique_nums[0]
+    else:
+        return unique_nums[2]
