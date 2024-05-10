@@ -50,11 +50,11 @@ class Person:
         input = None
         return = str
         '''
-        first_3_consonants_surname: str = ''
+        first_3: str = ''
         vocals: str = 'aeiou'
         for read in self._surname:
             flag1: bool = False
-            if (len(first_3_consonants_surname) < 3):
+            if (len(first_3) < 3):
                 for read2 in vocals:
                     if (read != read2):
                         continue
@@ -64,10 +64,27 @@ class Person:
                 if (flag1 == True):
                     continue
                 else:
-                    first_3_consonants_surname += read
+                    first_3 += read
             else:
                 break
-        print(first_3_consonants_surname)
+        print(first_3)
+        second_3: str = ''
+        for read in self._name:
+            flag1: bool = False
+            if (len(second_3) < 3):
+                for read2 in vocals:
+                    if (read != read2):
+                        continue
+                    else:
+                        flag1 = True
+                        break
+                if (flag1 == True):
+                    continue
+                else:
+                    second_3 += read
+            else:
+                break
+        print(second_3)
                         
     def __str__(self) -> str:
         return f'Name: {self._name}, Surname: {self._surname}, Ssn: {self._ssn}.'
