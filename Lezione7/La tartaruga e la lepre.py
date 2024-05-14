@@ -69,7 +69,7 @@ stamina_t: int = 100
 stamina_h: int = 100
 
 print('BANG !!!!! AND THEY\'RE OFF !!!!!')
-while (tick != 999999999999):
+while (tick != 999999999):
     for read in weather_change:
         if (tick == read):
             weather: str = random.choice(['soleggiato', 'pioggia'])
