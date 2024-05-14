@@ -48,8 +48,6 @@ position_t: int = 0
 position_h: int = 0
 tick: int = 0
 weather_change: list = range(0, 99999999, 10)
-for read in weather_change:
-    print(read)
 
 print('BANG !!!!! AND THEY\'RE OFF !!!!!')
 while (tick != 999999999999):
