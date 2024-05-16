@@ -79,12 +79,11 @@ class Zoo_Keeper:
         time: float = 0
         area_occupied: float = 0
         if (fence.area == 0):
-            for read in fence.animal:
-                time += (read.height * read.width)
+            for animal in fence.animal:
+                time += (animal.height * animal.width)
             return time
         else:
-            for read in fence.animal:
-                area_occupied += (read.height * read.width)
+            for animal in fence.animal:
+                area_occupied += (animal.height * animal.width)
             time += (area_occupied / fence.area)
             return time
-
