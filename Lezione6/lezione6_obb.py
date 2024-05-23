@@ -172,9 +172,7 @@ class Battery:
         if (self.capacity < 65):
             
             self.capacity = 65
-
-            
-    
+   
 #battery1: Battery = Battery(40.0, 30)
 #elec_car1: Electric_Car = Electric_Car('Tesla', '123rtv765', battery1)
 #read1 = elec_car1.get_range()
