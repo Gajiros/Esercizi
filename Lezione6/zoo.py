@@ -19,9 +19,9 @@ class Zoo:
 
 class Fence:
     
-    def __init__(self, animal: list, area: float, temperature: float, habitat: str) -> None:
+    def __init__(self, area: float, temperature: float, habitat: str) -> None:
         
-        self.animal = animal
+        self.animals = []
         self.area = area
         self.temperature = temperature
         self.habitat = habitat
@@ -42,7 +42,7 @@ class Animal:
     def __str__(self) -> str:
         return f'Animal(Name: {self.name} | Species: {self.species} | Age: {self.age})'
 
-class Zoo_Keeper:
+class ZooKeeper:
     
     def __init__(self, name: str, surname: str, id: str) -> None:
         
@@ -53,7 +53,7 @@ class Zoo_Keeper:
     def add_animal(self, animal: Animal, fence: Fence):
         
         if (animal.preferred_habitat == fence.habitat) and ((fence.area - (animal.width * animal.height)) >= 0):
-            fence.animal.append(animal)
+            fence.animals.append(animal)
             fence.area -= (animal.width * animal.height)
             animal.fence = fence
             print('The animal has been added.')
@@ -62,7 +62,7 @@ class Zoo_Keeper:
 
     def remove_animal(self, animal: Animal, fence: Fence):
 
-        fence.animal.remove(animal)
+        fence.animals.remove(animal)
         fence.area += (animal.width * animal.height)
         print('The animal has been removed.')
 
@@ -83,7 +83,7 @@ class Zoo_Keeper:
                 time += (animal.height * animal.width)
             return time
         else:
-            for animal in fence.animal:
+            for animal in fence.animals:
                 area_occupied += (animal.height * animal.width)
             time += (area_occupied / fence.area)
             return time
