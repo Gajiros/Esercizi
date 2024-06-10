@@ -10,10 +10,10 @@ class Dottore(Persona):
             print('La spacializzazione inserita non è una stringa!')
             self.specialization = None
         
-        if isinstance(parcel, int):
+        if isinstance(parcel, float):
             self.parcel = parcel
         else:
-            print('La parcella inserita non è un intero!')
+            print('La parcella inserita non è un float!')
             self.parcel = None
 
     def setSpecialization(self, specialization: str):
@@ -22,8 +22,8 @@ class Dottore(Persona):
         else:
             print('La spacializzazione inserita non è una stringa!')
     
-    def setParcel(self, parcel: int):
-        if isinstance(parcel, int):
+    def setParcel(self, parcel: float):
+        if isinstance(parcel, float):
             self.parcel = parcel
         else:
             print('La parcella inserita non è un intero!')
@@ -43,5 +43,5 @@ class Dottore(Persona):
             return False
 
     def doctorGreet(self):
-        Persona.greet(self)
+        self.greet(self)
         print(f'Sono un medico {self.specialization}')
