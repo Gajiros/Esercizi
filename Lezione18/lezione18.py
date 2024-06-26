@@ -27,7 +27,27 @@ def validate_password(password: str):
     else:
         raise InvalidPasswordError
 
-#3.
+#3
+class FileManager:
+    def __init__(self, filename, mode):
+        self.filename = filename
+        self.mode = mode
+        self.file = None
+    
+    def __enter__(self):
+        try:
+            self.file = open(self.filename, self.mode)
+        except IOError as e:
+            print(f"Error opening file: {e}")
+            self.file = None
+        return self.file
+    
+    def __exit__(self, exc_type, exc_value, traceback):
+        if self.file:
+            try:
+                self.file.close()
+            except IOError as e:
+                print(f"Error closing file: {e}")
 
 #4
 class Date:
@@ -74,7 +94,7 @@ class Database:
                 flag = False
                 print(f'You modified the date from {oldDate} to {date.getDate}.')
 
-date: Date = Date(30,5,2004)
-database: Database = Database()
-database.addDate(date)
-database.modifyDate(date)
+#date: Date = Date(30,5,2004)
+#database: Database = Database()
+#database.addDate(date)
+#database.modifyDate(date)
