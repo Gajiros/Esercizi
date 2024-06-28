@@ -58,4 +58,14 @@ def is_valid_parenthesis(s: str) -> bool:
             return True
 
 #3
-
+def merge(nums1: list, m: int, nums2: list, n: int):
+    while m < len(nums1):
+        nums1.pop()
+    while n < len(nums2):
+        nums2.pop()
+    if m == 0:
+        nums1.clear()
+    if n == 0:
+        nums2.clear()
+    nums1 += nums2
+    return nums1.sort()
